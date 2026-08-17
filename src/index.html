@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description"
+    content="SecureSign — a modern, accessible, frontend-only login page demo built with vanilla HTML, CSS, and JavaScript." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+  <title>Sign in — SecureSign Demo</title>
+
+  <link rel="stylesheet" href="./src/css/Styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#login-form">
+    Skip to sign-in form
+  </a>
+
+  <div class="demo-banner" role="note" aria-label="Demo notice">
+    <svg class="demo-banner__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2 2 6v6c0 5 3.5 9.5 10 10 6.5-.5 10-5 10-10V6L12 2Z" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linejoin="round" />
+      <path d="M12 8v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      <circle cx="12" cy="16" r="1" fill="currentColor" />
+    </svg>
+
+    <p>
+      <strong>Demo interface.</strong>
+      Client-side validation is <em>not</em> authentication.
+      See
+      <a href="../README.md">README</a>
+      &amp;
+      <a href="../SECURITY.md">SECURITY.md</a>.
+    </p>
+  </div>
+
+  <main class="auth">
+    <section class="card" aria-labelledby="login-title">
+
+      <header class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M12 2 4 6v6c0 5 3.5 9.4 8 10 4.5-.6 8-5 8-10V6L12 2Z" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linejoin="round" />
+            <path d="m8.5 12.2 2.6 2.6L15.8 10" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+
+        <h1 id="login-title" class="brand__title">
+          SecureSign
+        </h1>
+
+        <p class="brand__subtitle">
+          Sign in to your account
+        </p>
+      </header>
+
+      <form id="login-form" class="form" novalidate aria-describedby="form-status">
+
+        <!-- Username / Email -->
+        <div class="field">
+          <label for="username" class="field__label">
+            Email or username
+          </label>
+
+          <input id="username" name="username" type="text" class="field__input" autocomplete="username"
+            spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="email" required maxlength="254"
+            aria-invalid="false" aria-describedby="username-error" />
+
+          <p id="username-error" class="field__error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <label for="password" class="field__label">
+            Password
+          </label>
+
+          <div class="field__password">
+            <input id="password" name="password" type="password" class="field__input" autocomplete="current-password"
+              required maxlength="128" aria-invalid="false" aria-describedby="password-help password-error" />
+
+            <button type="button" id="toggle-password" class="field__toggle" aria-label="Show password"
+              aria-pressed="false" aria-controls="password">
+              <svg class="icon icon--eye" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linejoin="round" />
+                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+
+              <svg class="icon icon--eye-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path
+                  d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4M6.6 6.6C3.7 8.5 2 12 2 12s3.5 7 10 7c1.8 0 3.4-.5 4.8-1.2"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </button>
+          </div>
+
+          <p id="password-help" class="field__help">
+            Your password is sent to the server exactly as entered
+            and never stored by this page.
+          </p>
+
+          <p id="password-error" class="field__error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <!-- Remember / Forgot -->
+        <div class="form__row">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" id="remember" />
+
+            <span class="checkbox__box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="m5 12 4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+
+            <span class="checkbox__label">
+              Remember me
+            </span>
+          </label>
+
+          <a href="#forgot" class="link" id="forgot-link">
+            Forgot password?
+          </a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submit-btn" class="btn btn--primary">
+          <span class="btn__label">
+            Sign in
+          </span>
+
+          <span class="btn__spinner" aria-hidden="true"></span>
+        </button>
+
+        <!-- Divider -->
+        <div class="divider" role="separator" aria-label="Or use another method">
+          <span>or</span>
+        </div>
+
+        <!-- SSO -->
+        <button type="button" id="sso-btn" class="btn btn--secondary" aria-describedby="sso-note">
+          <span class="btn__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="12" cy="9.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <path d="M5.5 19c1.4-3 4-4.5 6.5-4.5s5.1 1.5 6.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
+            </svg>
+          </span>
+
+          <span>
+            Continue with single sign-on
+          </span>
+        </button>
+
+        <p id="sso-note" class="field__help sso-note">
+          UI placeholder only &mdash; no OAuth is performed.
+        </p>
+
+        <!-- Status -->
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Success panel -->
+      <section id="success-panel" class="success-panel" role="status" aria-live="polite" hidden>
+        <div class="success-panel__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="m5 12 4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <h2 class="success-panel__title">
+          Signed in (demo state)
+        </h2>
+
+        <p class="success-panel__text">
+          No real session was created. In production this view
+          would be reached only after the backend verified
+          credentials over HTTPS.
+        </p>
+
+        <button type="button" id="reset-demo" class="btn btn--secondary">
+          Reset demo
+        </button>
+      </section>
+
+      <p class="footnote">
+        Don&rsquo;t have an account?
+        <a href="./signup.html" class="link">
+          Create one
+        </a>
+      </p>
+
+      <button type="button" id="demo-success" class="demo-preview"
+        aria-label="Preview demo success state (UI only, not authentication)">
+        Preview demo success state
+      </button>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>
+      &copy; 2026 SecureSign Demo &middot;
+      Vanilla HTML, CSS &amp; JavaScript
+    </p>
+  </footer>
+
+  <script src="./js/app.js" defer></script>
+</body>
+
+</html>
