@@ -235,15 +235,6 @@ SecureSign uses a dark-themed authentication experience with a focus on:
 * Accessible labels
 * Keyboard navigation
 
-The sign-in page uses semantic form labels, accessible error regions, status announcements, and a skip link.
-The signup page follows the same accessibility-oriented structure and provides separate feedback regions for username, email, password, password confirmation, and terms validation.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-<!-- DESIGN PREVIEW PLACEHOLDER -->
-<p align="center">
-  <img src="./docs/images/design-preview.png" alt="SecureSign design system preview" width="850">
-</p>
-
 ---
 
 ## ♿ Accessibility
