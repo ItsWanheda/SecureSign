@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description"
+    content="SecureSign — a modern, accessible, frontend-only account creation demo built with vanilla HTML, CSS, and JavaScript." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+  <title>Create account — SecureSign Demo</title>
+
+  <link rel="stylesheet" href="./css/Styles.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#signup-form">
+    Skip to sign-up form
+  </a>
+
+
+  <!-- Demo Notice -->
+
+  <div class="demo-banner" role="note" aria-label="Demo notice">
+    <svg class="demo-banner__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2 2 6v6c0 5 3.5 9.5 10 10 6.5-.5 10-5 10-10V6L12 2Z" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linejoin="round" />
+
+      <path d="M12 8v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+      <circle cx="12" cy="16" r="1" fill="currentColor" />
+    </svg>
+
+    <p>
+      <strong>Demo interface.</strong>
+      Client-side validation is
+      <em>not</em> account creation.
+      See
+      <a href="../README.md">README</a>
+      &amp;
+      <a href="../SECURITY.md">SECURITY.md</a>.
+    </p>
+  </div>
+
+
+  <!-- Main -->
+
+  <main class="auth">
+
+    <section class="card" aria-labelledby="signup-title">
+
+      <!-- Brand -->
+
+      <header class="brand">
+
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M12 2 4 6v6c0 5 3.5 9.4 8 10 4.5-.6 8-5 8-10V6L12 2Z" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linejoin="round" />
+
+            <path d="M12 8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </span>
+
+        <h1 id="signup-title" class="brand__title">
+          Create your account
+        </h1>
+
+        <p class="brand__subtitle">
+          Join SecureSign today
+        </p>
+
+      </header>
+
+
+      <!-- Sign Up Form -->
+
+      <form id="signup-form" class="form" novalidate aria-describedby="form-status">
+
+
+        <!-- Username -->
+
+        <div class="field">
+
+          <label for="username" class="field__label">
+            Username
+          </label>
+
+          <input id="username" name="username" type="text" class="field__input" autocomplete="username"
+            spellcheck="false" autocapitalize="none" autocorrect="off" required minlength="3" maxlength="32"
+            pattern="[A-Za-z0-9._-]+" aria-invalid="false" aria-describedby="username-help username-error" />
+
+          <p id="username-help" class="field__help">
+            3–32 characters. Letters, numbers, dots,
+            underscores, and hyphens only.
+          </p>
+
+          <p id="username-error" class="field__error" role="alert" aria-live="polite"></p>
+
+        </div>
+
+
+        <!-- Email -->
+
+        <div class="field">
+
+          <label for="email" class="field__label">
+            Email address
+          </label>
+
+          <input id="email" name="email" type="email" class="field__input" autocomplete="email" spellcheck="false"
+            autocapitalize="none" autocorrect="off" inputmode="email" required maxlength="254" aria-invalid="false"
+            aria-describedby="email-error" />
+
+          <p id="email-error" class="field__error" role="alert" aria-live="polite"></p>
+
+        </div>
+
+
+        <!-- Password -->
+
+        <div class="field">
+
+          <label for="password" class="field__label">
+            Password
+          </label>
+
+          <div class="field__password">
+
+            <input id="password" name="password" type="password" class="field__input" autocomplete="new-password"
+              required minlength="12" maxlength="128" aria-invalid="false"
+              aria-describedby="password-help password-strength password-error" />
+
+            <button type="button" id="toggle-password" class="field__toggle" aria-label="Show password"
+              aria-pressed="false" aria-controls="password">
+
+              <svg class="icon icon--eye" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linejoin="round" />
+
+                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+
+              <svg class="icon icon--eye-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+                <path
+                  d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4M6.6 6.6C3.7 8.5 2 12 2 12s3.5 7 10 7c1.8 0 3.4-.5 4.8-1.2"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+
+            </button>
+
+          </div>
+
+
+          <!-- Password strength -->
+
+          <div id="password-strength" class="password-strength" aria-live="polite">
+
+            <div class="password-strength__bar" aria-hidden="true">
+              <span class="password-strength__fill" id="password-strength-fill"></span>
+            </div>
+
+            <span class="password-strength__label" id="password-strength-label">
+              Enter a password
+            </span>
+
+          </div>
+
+
+          <p id="password-help" class="field__help">
+            Use at least 12 characters with a mix of
+            letters, numbers, and symbols.
+          </p>
+
+          <p id="password-error" class="field__error" role="alert" aria-live="polite"></p>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+
+        <div class="field">
+
+          <label for="confirm-password" class="field__label">
+            Confirm password
+          </label>
+
+          <div class="field__password">
+
+            <input id="confirm-password" name="confirmPassword" type="password" class="field__input"
+              autocomplete="new-password" required maxlength="128" aria-invalid="false"
+              aria-describedby="confirm-password-error" />
+
+            <button type="button" id="toggle-confirm-password" class="field__toggle" aria-label="Show password"
+              aria-pressed="false" aria-controls="confirm-password">
+
+              <svg class="icon icon--eye" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linejoin="round" />
+
+                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+
+              <svg class="icon icon--eye-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+
+                <path
+                  d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4M6.6 6.6C3.7 8.5 2 12 2 12s3.5 7 10 7c1.8 0 3.4-.5 4.8-1.2"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+
+            </button>
+
+          </div>
+
+          <p id="confirm-password-error" class="field__error" role="alert" aria-live="polite"></p>
+
+        </div>
+
+
+        <!-- Terms -->
+
+        <label class="checkbox checkbox--terms">
+
+          <input type="checkbox" name="terms" id="terms" required aria-describedby="terms-error" />
+
+          <span class="checkbox__box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="m5 12 4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+
+          <span class="checkbox__label">
+            I agree to the
+            <a href="#terms" class="link">
+              Terms of Service
+            </a>
+            and
+            <a href="#privacy" class="link">
+              Privacy Policy
+            </a>.
+          </span>
+
+        </label>
+
+        <p id="terms-error" class="field__error checkbox-error" role="alert" aria-live="polite"></p>
+
+
+        <!-- Submit -->
+
+        <button type="submit" id="submit-btn" class="btn btn--primary">
+
+          <span class="btn__label">
+            Create account
+          </span>
+
+          <span class="btn__spinner" aria-hidden="true"></span>
+
+        </button>
+
+
+        <!-- Status -->
+
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+
+      </form>
+
+
+      <!-- Success -->
+
+      <section id="success-panel" class="success-panel" role="status" aria-live="polite" hidden>
+
+        <div class="success-panel__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="m5 12 4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <h2 class="success-panel__title">
+          Account created (demo state)
+        </h2>
+
+        <p class="success-panel__text">
+          No real account was created.
+          In production, the backend would securely
+          validate the information and create the account.
+        </p>
+
+        <button type="button" id="reset-demo" class="btn btn--secondary">
+          Create another demo account
+        </button>
+
+      </section>
+
+
+      <!-- Login -->
+
+      <p class="footnote">
+        Already have an account?
+        <a href="./index.html" class="link">
+          Sign in
+        </a>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="page-footer">
+    <p>
+      &copy; 2026 SecureSign Demo &middot;
+      Vanilla HTML, CSS &amp; JavaScript
+    </p>
+  </footer>
+
+
+  <script src="./js/signup.js" defer></script>
+
+</body>
+
+</html>
