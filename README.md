@@ -141,19 +141,19 @@ SecureSign/
 │   └── workflows/
 │       └── validate.yml
 │
+├── src/
+│   ├── index.html
+│   ├── signup.html
+│   │
+│   ├── css/
+│   │   └── Styles.css
+│   │
+│   └── js/
+│       ├── app.js
+│       └── signup.js
+│
 ├── .editorconfig
 ├── .gitignore
-│
-├── index.html
-├── signup.html
-│
-├── css/
-│   └── Styles.css
-│
-├── js/
-│   ├── app.js
-│   └── signup.js
-│
 ├── README.md
 ├── SECURITY.md
 ├── CONTRIBUTING.md
