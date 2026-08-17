@@ -507,11 +507,11 @@ Contributions are welcome.
 
 Before submitting changes, please read:
 
-* `[CONTRIBUTING.md](CONTRIBUTING.md)`
-* `[SECURITY.md](SECURITY.md)`
-* `[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)`
+* `[CONTRIBUTING.md](./CONTRIBUTING.md)`
+* `[SECURITY.md](./SECURITY.md)`
+* `[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)`
 
-Security vulnerabilities should **not** be reported through public GitHub issues. Follow the security reporting process described in `[SECURITY.md](SECURITY.md)`.
+Security vulnerabilities should **not** be reported through public GitHub issues. Follow the security reporting process described in `[SECURITY.md](./SECURITY.md)`.
 
 ---
 
