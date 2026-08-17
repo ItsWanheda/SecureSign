@@ -1,0 +1,100 @@
+name: Validate
+
+on:
+push:
+branches:
+- main
+- master
+
+pull_request:
+branches:
+- main
+- master
+
+permissions:
+contents: read
+
+jobs:
+validate:
+name: Validate Project
+runs-on: ubuntu-latest
+
+```
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Validate required files
+    shell: bash
+    run: |
+      set -e
+
+      required_files=(
+        "index.html"
+        "signup.html"
+        "README.md"
+        "SECURITY.md"
+        "CONTRIBUTING.md"
+        "CODE_OF_CONDUCT.md"
+        ".gitignore"
+        ".editorconfig"
+      )
+
+      for file in "${required_files[@]}"; do
+        if [ ! -f "$file" ]; then
+          echo "::error::Missing required file: $file"
+          exit 1
+        fi
+
+        echo "✓ Found $file"
+      done
+
+  - name: Validate HTML files
+    shell: bash
+    run: |
+      set -e
+
+      for file in index.html signup.html; do
+        if [ ! -s "$file" ]; then
+          echo "::error::$file is empty"
+          exit 1
+        fi
+
+        if ! grep -qi '<!DOCTYPE html>' "$file"; then
+          echo "::error::$file does not contain a valid HTML5 doctype"
+          exit 1
+        fi
+
+        if ! grep -qi '<html' "$file"; then
+          echo "::error::$file does not contain an HTML element"
+          exit 1
+        fi
+
+        echo "✓ $file passed basic validation"
+      done
+
+  - name: Check for obvious secrets
+    shell: bash
+    run: |
+      set -e
+
+      if grep -RniE \
+        --exclude-dir=.git \
+        --exclude-dir=.github \
+        --exclude='*.md' \
+        --exclude='*.svg' \
+        --exclude='*.html' \
+        '(AKIA[0-9A-Z]{16}|BEGIN (RSA|EC|OPENSSH|DSA|PRIVATE) KEY|ghp_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{20,})' \
+        .; then
+
+        echo "::error::Potential secret detected. Review the output and remove sensitive data."
+        exit 1
+      fi
+
+      echo "✓ No obvious hardcoded secrets detected"
+
+  - name: Check repository status
+    shell: bash
+    run: |
+      echo "Repository validation completed successfully."
+```
