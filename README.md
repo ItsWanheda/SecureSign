@@ -46,7 +46,6 @@ The project focuses on:
 |:---:|:---:|
 | <img src="./docs/images/signin.png" alt="SecureSign sign-in screen" width="420"> | <img src="./docs/images/signup.png" alt="SecureSign create-account screen" width="420"> |
 
-> **Screenshot placeholders:** `securesign-hero.png` and `docs/images/signup.png`
 
 ---
 
