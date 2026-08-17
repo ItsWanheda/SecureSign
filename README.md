@@ -2,12 +2,6 @@
 
 > **A modern, accessible, security-conscious authentication UI demo built with vanilla HTML, CSS, and JavaScript.**
 
-<!--
-  HERO IMAGE PLACEHOLDER
-  Replace this path with your real project screenshot/banner:
-  ./docs/images/securesign-hero.png
--->
-
 <p align="center">
   <img src="./docs/images/securesign-hero.png" alt="SecureSign authentication interface preview" width="900">
 </p>
@@ -17,7 +11,6 @@
 </p>
 
 <p align="center">
-  <!-- Replace these placeholder badges with your repository URLs/statuses when available. -->
   <img src="https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-Responsive-blue?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-Vanilla-yellow?style=for-the-badge&logo=javascript&logoColor=black" alt="Vanilla JavaScript">
@@ -49,16 +42,11 @@ The project focuses on:
 
 ## 🖼️ Preview
 
-<!--
-  SCREENSHOT PLACEHOLDERS
-  Add your actual screenshots under ./docs/images/ and update the paths below.
--->
-
 | Sign In | Create Account |
 |:---:|:---:|
 | <img src="./docs/images/signin.png" alt="SecureSign sign-in screen" width="420"> | <img src="./docs/images/signup.png" alt="SecureSign create-account screen" width="420"> |
 
-> **Screenshot placeholders:** `docs/images/signin.png` and `docs/images/signup.png`
+> **Screenshot placeholders:** `securesign-hero.png` and `docs/images/signup.png`
 
 ---
 
@@ -231,14 +219,6 @@ SecureSign/
 ```
 
 The exact directory structure can be adjusted depending on deployment requirements.
-
----
-
-<!--
-  OPTIONAL PROJECT STRUCTURE IMAGE
-  Add a visual architecture/tree image here if you create one:
-  ./docs/images/project-structure.png
--->
 
 ---
 
