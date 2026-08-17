@@ -1,22 +1,91 @@
-# SecureSign
+# 🔐 SecureSign
 
-> A modern, accessible, security-conscious authentication UI demo built with vanilla HTML, CSS, and JavaScript.
+> **A modern, accessible, security-conscious authentication UI demo built with vanilla HTML, CSS, and JavaScript.**
+
+<!--
+  HERO IMAGE PLACEHOLDER
+  Replace this path with your real project screenshot/banner:
+  ./docs/images/securesign-hero.png
+-->
+
+<p align="center">
+  <img src="./docs/images/securesign-hero.png" alt="SecureSign authentication interface preview" width="900">
+</p>
+
+<p align="center">
+  <strong>Frontend authentication UI • Accessibility-first • Security-conscious • Vanilla JavaScript</strong>
+</p>
+
+<p align="center">
+  <!-- Replace these placeholder badges with your repository URLs/statuses when available. -->
+  <img src="https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-Responsive-blue?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-Vanilla-yellow?style=for-the-badge&logo=javascript&logoColor=black" alt="Vanilla JavaScript">
+  <img src="https://img.shields.io/badge/Accessibility-First-4c1?style=for-the-badge" alt="Accessibility First">
+</p>
+
+---
+
+## 📖 Overview
 
 SecureSign is a frontend-only authentication interface designed to demonstrate how a modern sign-in and account-creation experience can be structured with **semantic HTML, CSS, and vanilla JavaScript**.
 
 The project focuses on:
 
-* Clean authentication UX
-* Responsive design
-* Accessibility
-* Client-side form validation
-* Password visibility controls
-* Password-strength feedback
-* Secure-by-default frontend practices
-* Clear separation between UI behavior and real authentication
-* A foundation that can later be connected to a secure backend
+- Clean authentication UX
+- Responsive design
+- Accessibility
+- Client-side form validation
+- Password visibility controls
+- Password-strength feedback
+- Secure-by-default frontend practices
+- Clear separation between UI behavior and real authentication
+- A foundation that can later be connected to a secure backend
 
-> **Important:** SecureSign is a UI/demo project. It is **not a production authentication system**. Client-side validation does not authenticate users, create accounts, establish sessions, hash passwords, or protect credentials.
+> [!IMPORTANT]
+> SecureSign is a **UI/demo project**, not a production authentication system. Client-side validation does not authenticate users, create accounts, establish sessions, hash passwords, or protect credentials.
+
+---
+
+## 🖼️ Preview
+
+<!--
+  SCREENSHOT PLACEHOLDERS
+  Add your actual screenshots under ./docs/images/ and update the paths below.
+-->
+
+| Sign In | Create Account |
+|:---:|:---:|
+| <img src="./docs/images/signin.png" alt="SecureSign sign-in screen" width="420"> | <img src="./docs/images/signup.png" alt="SecureSign create-account screen" width="420"> |
+
+> **Screenshot placeholders:** `docs/images/signin.png` and `docs/images/signup.png`
+
+---
+
+## 🧭 Contents
+
+- [✨ Features](#-features)
+- [🔐 Security Philosophy](#-security-philosophy)
+- [🧠 What SecureSign Does NOT Do](#-what-securesign-does-not-do)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Design](#-design)
+- [♿ Accessibility](#-accessibility)
+- [🔑 Password Handling](#-password-handling)
+- [🚀 Running Locally](#-running-locally)
+- [🌐 Deployment](#-deployment)
+- [🏗️ Recommended Production Architecture](#️-recommended-production-architecture)
+- [🧪 Validation](#-validation)
+- [🔒 Security Headers](#-security-headers)
+- [🧩 SSO / OAuth](#-sso--oauth)
+- [📱 Responsive Design](#-responsive-design)
+- [🔄 Demo States](#-demo-states)
+- [🧭 Roadmap](#-roadmap)
+- [🧪 Security Testing Checklist](#-security-testing-checklist)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [👤 Author](#-author)
 
 ---
 
@@ -78,7 +147,7 @@ For example, the signup interface requires:
 
 These restrictions are useful for UX and input hygiene, but they must be repeated and enforced on the server.
 
-## The signup form currently defines a 3–32 character username policy and a minimum 12-character password requirement.
+---
 
 ## 🧠 What SecureSign Does NOT Do
 
@@ -122,7 +191,7 @@ SecureSign intentionally uses a minimal frontend stack.
 | SVG        | Lightweight interface icons                 |
 | Vanilla JS | No frontend framework dependency            |
 
-## The pages load their own CSS and JavaScript assets rather than relying on a frontend framework.
+---
 
 ## 📁 Project Structure
 
@@ -165,6 +234,14 @@ The exact directory structure can be adjusted depending on deployment requiremen
 
 ---
 
+<!--
+  OPTIONAL PROJECT STRUCTURE IMAGE
+  Add a visual architecture/tree image here if you create one:
+  ./docs/images/project-structure.png
+-->
+
+---
+
 ## 🎨 Design
 
 SecureSign uses a dark-themed authentication experience with a focus on:
@@ -181,6 +258,13 @@ SecureSign uses a dark-themed authentication experience with a focus on:
 The sign-in page uses semantic form labels, accessible error regions, status announcements, and a skip link.
 The signup page follows the same accessibility-oriented structure and provides separate feedback regions for username, email, password, password confirmation, and terms validation.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- DESIGN PREVIEW PLACEHOLDER -->
+<p align="center">
+  <img src="./docs/images/design-preview.png" alt="SecureSign design system preview" width="850">
+</p>
+
+---
 
 ## ♿ Accessibility
 
@@ -325,6 +409,18 @@ HTTPS / TLS
 ```
 
 The technology choices above are recommendations for a future backend and are not currently implemented by this repository.
+
+---
+
+<!--
+  ARCHITECTURE IMAGE PLACEHOLDER
+  Replace with a generated architecture diagram:
+  ./docs/images/architecture.png
+-->
+
+<p align="center">
+  <img src="./docs/images/architecture.png" alt="SecureSign recommended production authentication architecture" width="850">
+</p>
 
 ---
 
