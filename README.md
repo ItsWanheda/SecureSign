@@ -117,7 +117,7 @@ The registration page similarly identifies itself as a demo and states that clie
 
 ---
 
-## 🔐 Security Philosophy
+## ♿ Keyboard Accessibility\n\nSecureSign is designed to remain usable without a mouse. The sign-in interface provides:\n\n- Keyboard-focusable form controls and actions\n- A visible skip link for jumping directly to the sign-in form\n- Accessible labels and status messaging for interactive states\n- Password visibility control that is exposed as a button rather than a mouse-only interaction\n\nThese are UI accessibility features only; they do not provide authentication or authorization security.\n\n---\n\n## 🔐 Security Philosophy
 
 SecureSign is designed around an important principle:
 
